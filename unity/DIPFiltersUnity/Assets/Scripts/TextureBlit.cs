@@ -29,6 +29,21 @@ public class TextureBlit : MonoBehaviour {
         if (temp == null) {
             CreateTempRTx();
         }
+
+        float[] w = new float [] {
+            1f/9f,
+            1f/9f,
+            1f/9f,
+            1f/9f,
+            1f/9f,
+            1f/9f,
+            1f/9f,
+            1f/9f,
+            1f/9f,
+        };
+        Shader.SetGlobalFloatArray("_Kernel", w);
+        Shader.SetGlobalFloat("_KernelLength", w.Length);
+
         // Graphics.Blit(texture, texture, blitMaterial) // Only on Mac?
         Graphics.Blit(texture, temp, blitMaterial);
         Graphics.Blit(temp, texture);

@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: BlitMaterial
-  m_Shader: {fileID: 4800000, guid: 127b26680bf3e4f11aed48a9f7cbec4e, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3579085a02bf643c999a2b5a3415cdb8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
