@@ -2,8 +2,6 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-import sys
-
 height = 128
 width = 128
 
@@ -30,6 +28,7 @@ plt.subplot(122),plt.imshow(magnitude_spectrum, cmap = 'gray')
 plt.title('Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
 plt.show()
 
+import sys
 if len(sys.argv) > 1:
     cv2.imwrite(sys.argv[1], img)
 

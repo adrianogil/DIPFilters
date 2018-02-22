@@ -3,12 +3,14 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 from sympy import *
- 
+
 image_folder = '../images/'
 renoir_01 = image_folder + '/Renoir/Frau-mi-Sonnenschirm-by-Pierre-Auguste-Renoir-OSA351_1.jpg'
 renoir_02 = image_folder + '/Renoir/pierre-auguste-renoir.jpg'
 
 img = cv2.imread(renoir_01)
+
+
 
 gray_scale_transform_matrix = (1.0/3.0) * np.array(
                                 [[1, 1, 1],
@@ -44,6 +46,12 @@ def show_RGB_values_after_spatial_transform(transform_matrix):
 show_RGB_values_after_spatial_transform(sepia_transform_matrix)
 sepia_img = cv2.transform(img, sepia_transform_matrix)
 
-cv2.imshow('Sepia image',sepia_img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+plt.subplot(121),plt.imshow(img)
+plt.title('Input Image'), plt.xticks([]), plt.yticks([])
+plt.subplot(122),plt.imshow(sepia_img)
+plt.title('Sepia'), plt.xticks([]), plt.yticks([])
+plt.show()
+
+import sys
+if len(sys.argv) > 1:
+    cv2.imwrite(sys.argv[1], sepia_img)
